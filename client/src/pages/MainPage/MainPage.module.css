@@ -10,7 +10,7 @@
 
 .image {
     position: relative;
-    height: 70vh;
+    height: 100vh;
 }
 
 .content1 {
@@ -33,4 +33,14 @@ h3 {
     text-align: center;
     padding: 3rem 1rem;
     text-align: justify;
+}
+
+
+.companyLogo {
+    width: 150px;
+    /* Задайте ширину логотипа по вашему желанию */
+    margin-left: 2px;
+    /* Отступ слева для лучшего выравнивания */
+    vertical-align: middle;
+    /* Выравнивание логотипа по тексту */
 }

@@ -5,8 +5,13 @@ import imgRes from '../../static/imgs/res.png'
 import img3 from '../../static/imgs/3.png'
 import img5 from '../../static/imgs/5.png'
 import img7 from '../../static//imgs/7.png'
+import img9 from '../../static//imgs/9.png'
 import { Parallax } from 'react-parallax';
 import TextBoxAbout from './MPComponent/TextBoxAbout';
+import TextBox1 from './MPComponent/TextBox1'
+import TextBox2 from './MPComponent/TextBox2'
+import TextBox3 from './MPComponent/Textbox3'
+import TextBox4 from './MPComponent/TextBox4'
 
 
 const main = () => {
@@ -25,20 +30,28 @@ const main = () => {
 
                 </Parallax>
 
-                <TextBoxAbout />
+                <TextBox1 />
 
                 <Parallax
                     className={s.image} bgImage={img5} strength={500}>
 
                 </Parallax>
 
-                <TextBoxAbout />
+                <TextBox2 />
 
                 <Parallax
-                    className={s.image} bgImage={img7} strength={200}>
+                    className={s.image} bgImage={img7} strength={500}>
 
                 </Parallax>
 
+                <TextBox3 />
+
+                <Parallax
+                    className={s.image} bgImage={img9} strength={500}>
+
+                </Parallax>
+
+                <TextBox4 />
 
             </div>
         </MainLayout>
