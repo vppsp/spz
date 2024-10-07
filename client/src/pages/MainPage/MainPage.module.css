@@ -5,12 +5,31 @@
 .content {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    align-items: center;
 }
 
+/* Parallax image container */
 .image {
-    position: relative;
-    height: 100vh;
+    width: 100%;
+    /* Устанавливаем ширину в 100% экрана */
+    height: 800px;
+    /* Высота по умолчанию для больших экранов */
+}
+
+/* Адаптация для мобильных устройств (меньше 768px ширины) */
+@media (max-width: 768px) {
+    .image {
+        height: 300px;
+        width: 100%;
+        /* Уменьшаем высоту для мобильных */
+        background-size: cover;
+        /* Масштабируем изображение, чтобы оно полностью помещалось */
+    }
+
+    .content {
+        padding: 10px;
+        /* Добавляем небольшие отступы */
+    }
 }
 
 .content1 {

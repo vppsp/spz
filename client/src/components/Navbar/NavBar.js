@@ -1,21 +1,30 @@
-import React from 'react'
-import logo from '../../static/imgs/logo-main.png'
-import { Link, NavLink } from "react-router-dom";
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar'
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
+import React from 'react';
+import logo from '../../static/imgs/sp-logo.svg';
+
+import { Nav, Navbar, Button, Container } from 'react-bootstrap';
 
 const NavBar = () => {
     return (
-        <Container>
-            <Navbar>
-                <img src={logo} alt={'SP Express'} />
-                <Nav className="ms-auto">
-                    <Button href="https://www.sppartner.ru/" target='_blank'>Личный кабинет</Button>
-                </Nav >
-            </Navbar>
-        </Container>
+        <Navbar bg="light" expand="lg">
+            <Container>
+                <Navbar.Brand href="/">
+                    <img src={logo} alt="SP Express" style={{ width: '150px' }} />
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="ms-auto">
+                        <Button
+                            href="https://www.sppartner.ru/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            variant="outline-primary"
+                        >
+                            Личный кабинет
+                        </Button>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
     )
 }
 
