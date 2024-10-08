@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import MainLayout from '../../layouts/MainLayout/MainLayout'
 import Stl from './MainPage.module.css'
 import imgRes from '../../static/imgs/res.png'
@@ -22,18 +22,56 @@ const parallaxSections = [
     { img: img9, component: <TextBox4 /> },
 ];
 
-const main = () => {
+const Main = () => {
+
+    const [isParallaxEnabled, setIsParallaxEnabled] = useState(true);
+
+    // Определение ширины экрана и отключение параллакса на мобильных устройствах
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 768) { // Условие для отключения параллакса на мобильных (до 768px)
+                setIsParallaxEnabled(false);
+            } else {
+                setIsParallaxEnabled(true);
+            }
+        };
+        // Вызов функции при загрузке и при изменении размера окна
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        // Очистка обработчика при размонтировании компонента
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+
+    }, []);
+
     return (
         <MainLayout>
             <div className={Stl.content}>
                 {parallaxSections.map(({ img, component }, index) => (
                     <React.Fragment key={index}>
-                        <Parallax
-                            className={Stl.image}
-                            bgImage={img}
-                            strength={500}
-                            bgImageStyle={{ width: '100%', height: 'auto' }} // Гарантируем, что изображение будет масштабироваться
-                        />
+                        {isParallaxEnabled ? (
+                            <Parallax
+                                className={Stl.image}
+                                bgImage={img}
+                                strength={500}
+                                bgImageStyle={{ width: '100%', height: 'auto' }} // Масштабирование изображения
+                            >
+                                {/* Пустой div для содержания параллакса */}
+                            </Parallax>
+                        ) : (
+                            <div
+                                className={Stl.image}
+                                style={{
+                                    backgroundImage: `url(${img})`,
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center',
+                                    height: '220px',
+                                    width: '100%',
+                                }}
+                            />
+                        )}
                         {component}
                     </React.Fragment>
                 ))}
@@ -42,4 +80,4 @@ const main = () => {
     )
 }
 
-export default main
+export default Main

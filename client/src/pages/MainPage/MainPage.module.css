@@ -19,7 +19,7 @@
 /* Адаптация для мобильных устройств (меньше 768px ширины) */
 @media (max-width: 768px) {
     .image {
-        height: 300px;
+        height: 220px;
         width: 100%;
         /* Уменьшаем высоту для мобильных */
         background-size: cover;
@@ -29,6 +29,21 @@
     .content {
         padding: 10px;
         /* Добавляем небольшие отступы */
+    }
+
+    h4 {
+        font-size: 18px;
+
+    }
+
+    p {
+        font-size: 16px;
+
+    }
+
+    ul {
+        font-size: 16px;
+
     }
 }
 
