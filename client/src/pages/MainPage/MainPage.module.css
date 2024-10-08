@@ -71,9 +71,9 @@ h3 {
 
 
 .companyLogo {
-    width: 150px;
+    width: 120px;
     /* Задайте ширину логотипа по вашему желанию */
-    margin-left: 2px;
+    margin-left: 0px;
     /* Отступ слева для лучшего выравнивания */
     vertical-align: middle;
     /* Выравнивание логотипа по тексту */
