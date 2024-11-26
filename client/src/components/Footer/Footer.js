@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './Footer.module.css'
-import RPU from '../../pages/MainPage/MPComponent/Руководство по услугам 2024 (Ред1-3).pdf'
+import RPU from '../../pages/MainPage/MPComponent/Руководство по услугам 2024 (Ред1-4).pdf'
 import DOG from '../../pages/MainPage/MPComponent/Договор Образец.pdf'
 
 const Footer = () => {
